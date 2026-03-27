@@ -5,7 +5,7 @@ import { Send, Phone, Mail, MapPin, MessageCircle, CheckCircle, Loader2 } from '
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
-  const [form, setForm] = useState({ name: '', email: '', country: '', requirement:: '' });
+  const [form, setForm] = useState({ name: '', email: '', country: '', requirement::: '' });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -22,7 +22,7 @@ export default function Contact() {
       });
       if (!res.ok) throw new Error('Failed to submit');
       setSubmitted(true);
-      setForm({ name: '', email: '', country: '', requirement:: '' });
+      setForm({ name: '', email: '', country: '', requirement::: '' });
     } catch (err: any) {
       setError(err.message || 'Something went wrong');
     } finally {
@@ -46,7 +46,7 @@ export default function Contact() {
             Let's <span className="gold-gradient">Do Business</span>
           </h2>
           <p className="text-white-muted text-lg mt-4 max-w-2xl mx-auto">
-            Ready to source premium Indian produce? Send us your requirement:s.
+            Ready to source premium Indian produce? Send us your requirement::s.
           </p>
         </motion.div>
 
@@ -109,12 +109,12 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-white-muted mb-2 block">requirement: *</label>
+                  <label className="text-sm text-white-muted mb-2 block">requirement:: *</label>
                   <textarea
                     required
                     rows={4}
-                    value={form.requirement:}
-                    onChange={(e) => setForm({ ...form, requirement:: e.target.value })}
+                    value={form.requirement::}
+                    onChange={(e) => setForm({ ...form, requirement::: e.target.value })}
                     className="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white focus:border-gold/60 focus:outline-none transition-colors placeholder:text-white-muted/40 resize-none"
                     placeholder="I need 20 tons of premium red onions..."
                   />
