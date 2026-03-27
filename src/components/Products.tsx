@@ -14,17 +14,21 @@ interface Product {
 export default function Products() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
+const [products, setProducts] = useState([]);
+const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch('/api/products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false));
-  }, []);
-
+useEffect(() => {
+  fetch('/api/products')
+    .then(res => res.json())
+    .then(data => {
+      setProducts(Array.isArray(data) ? data : []);
+      setLoading(false);
+    })
+    .catch(() => {
+      setProducts([]);
+      setLoading(false);
+    });
+}, []);
   const badgeIcons: Record<string, typeof ShieldCheck> = {
     'Export Grade': ShieldCheck,
     'Farm Fresh': Leaf,
