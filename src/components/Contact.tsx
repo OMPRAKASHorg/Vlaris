@@ -22,8 +22,7 @@ export default function Contact() {
       });
       if (!res.ok) throw new Error('Failed to submit');
       setSubmitted(true);
-      setForm({ name: '', email: '', country: '', requirement:
-    '' });
+      setForm({ name: '', email: '', country: '', requirement: '' });
     } catch (err: any) {
       setError(err.message || 'Something went wrong');
     } finally {
@@ -47,7 +46,7 @@ export default function Contact() {
             Let's <span className="gold-gradient">Do Business</span>
           </h2>
           <p className="text-white-muted text-lg mt-4 max-w-2xl mx-auto">
-            Ready to source premium Indian produce? Send us your requirement::s.
+            Ready to source premium Indian produce? Send us your requirements.
           </p>
         </motion.div>
 
@@ -110,8 +109,8 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-white-muted mb-2 block">requirement:: *</label>
-                  <textarea
+                  <label className="text-sm text-white-muted mb-2 block">Requirement *</label>
+value={form.requirement}
                     required
                     rows={4}
                     value={form.requirement::}
