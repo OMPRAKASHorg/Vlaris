@@ -65,51 +65,35 @@ useEffect(() => {
             ))}
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        Array.isArray(products) && products.map((product, i) => (
-  <motion.div>...</motion.div>
-))
-                key={product.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.2 + i * 0.15 }}
-                className="group glass rounded-3xl overflow-hidden hover:border-gold/40 transition-all duration-500"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={product.image_url}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent" />
-                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
-                    {product.category}
-                  </div>
-                </div>
-                <div className="p-6 sm:p-8">
-                  <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
-                    {product.name}
-                  </h3>
-                  <p className="text-white-muted leading-relaxed mb-6">{product.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {product.badges.split(',').map((badge) => {
-                      const trimmed = badge.trim();
-                      const Icon = badgeIcons[trimmed] || ShieldCheck;
-                      return (
-                        <span
-                          key={trimmed}
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs bg-gold/10 border border-gold/20 text-gold"
-                        >
-                          <Icon size={12} />
-                          {trimmed}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {Array.isArray(products) && products.map((product, i) => (
+    <motion.div
+      key={product.id}
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ delay: 0.2 + i * 0.15 }}
+      className="group glass rounded-3xl overflow-hidden hover:border-gold/40 transition-all duration-500"
+    >
+      <div className="relative h-64 overflow-hidden">
+        <img
+          src={product.image_url}
+          alt={product.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+      </div>
+
+      <div className="p-6 sm:p-8">
+        <h3 className="text-2xl font-bold mb-3">
+          {product.name}
+        </h3>
+
+        <p className="text-white-muted mb-6">
+          {product.description}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
         )}
       </div>
     </section>
