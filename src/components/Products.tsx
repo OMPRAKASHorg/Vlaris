@@ -35,7 +35,7 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="py-24 sm:py-32 relative" ref={ref}>
+    <section id="" className="py-24 sm:py-32 relative" ref={ref}>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       <div className="absolute bottom-0 left-20 w-96 h-96 bg-gold/3 rounded-full blur-3xl" />
 
@@ -62,7 +62,7 @@ export default function Products() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, i) => (
+         Array.isArray(products) && products.map((item) => ...)
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 30 }}
