@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Send, Phone, Mail, MapPin, MessageCircle, CheckCircle, Loader2 } from 'lucide-react';
