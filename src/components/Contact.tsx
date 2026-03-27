@@ -14,7 +14,7 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     setError('');
-    try {
+    try { 
       const res = await fetch('/api/inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
