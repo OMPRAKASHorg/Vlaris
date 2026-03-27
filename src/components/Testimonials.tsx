@@ -51,39 +51,20 @@ useEffect(() => {
             ))}
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          Array.isArray(testimonials) && testimonials.map((item, i) => (
-  <div>...</div>
-))
-                key={t.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.1 + i * 0.1 }}
-                className="glass rounded-2xl p-6 sm:p-8 hover:border-gold/30 transition-all duration-500 relative group"
-              >
-                <Quote className="absolute top-6 right-6 w-8 h-8 text-gold/10 group-hover:text-gold/20 transition-colors" />
-                <div className="flex items-center gap-1 mb-4">
-                  {Array.from({ length: 5 }).map((_, si) => (
-                    <Star
-                      key={si}
-                      size={16}
-                      className={si < t.rating ? 'text-gold fill-gold' : 'text-dark-border'}
-                    />
-                  ))}
-                </div>
-                <p className="text-white-muted leading-relaxed mb-6 line-clamp-3">"{t.review}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-dark font-bold text-lg">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm">{t.name}</p>
-                    <p className="text-xs text-white-muted">{t.company} · {t.flag} {t.country}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {Array.isArray(testimonials) && testimonials.map((t, i) => (
+    <motion.div
+      key={t.id}
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ delay: 0.1 + i * 0.1 }}
+      className="glass rounded-2xl p-6"
+    >
+      <p>{t.review}</p>
+      <p>{t.name}</p>
+    </motion.div>
+  ))}
+</div>
         )}
       </div>
     </section>
