@@ -17,15 +17,13 @@ export default function Testimonials() {
 const inView = useInView(ref, { once: true });
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/api/testimonials')
-      .then(res => res.json())
-      .then(data => setTestimonials(Array.isArray(data) ? data : []))
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false));
-  }, []);
-
+useEffect(() => {
+  fetch('/api/testimonials')
+    .then(res => res.json())
+    .then(data => setTestimonials(Array.isArray(data) ? data : []))
+    .catch(() => setTestimonials([]))
+    .finally(() => setLoading(false));
+}, []);
   return (
     <section id="testimonials" className="py-24 sm:py-32 relative" ref={ref}>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
