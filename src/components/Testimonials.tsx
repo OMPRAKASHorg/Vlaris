@@ -14,14 +14,14 @@ interface Testimonial {
 
 export default function Testimonials() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+const inView = useInView(ref, { once: true });
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('/api/testimonials')
       .then(res => res.json())
-      .then(data => setTestimonials(data))
+      .then(data => setTestimonials(Array.isArray(data) ? data : []))
       .catch(err => console.error(err))
       .finally(() => setLoading(false));
   }, []);
@@ -54,7 +54,7 @@ export default function Testimonials() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
+           Array.isArray(testimonials) && testimonials.map((item, i) => (
               <motion.div
                 key={t.id}
                 initial={{ opacity: 0, y: 30 }}
