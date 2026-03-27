@@ -108,17 +108,17 @@ export default function Contact() {
                     placeholder="United Arab Emirates"
                   />
                 </div>
-                <div>
-                  <label className="text-sm text-white-muted mb-2 block">Requirement *</label>
-value={form.requirement}
-                    required
-                    rows={4}
-                    value={form.requirement}
-                    onChange={(e) => setForm({ ...form, requirement: e.target.value })}
-                    className="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white focus:border-gold/60 focus:outline-none transition-colors placeholder:text-white-muted/40 resize-none"
-                    placeholder="I need 20 tons of premium red onions..."
-                  />
-                </div>
+             <div>
+  <label className="text-sm text-white-muted mb-2 block">Requirement *</label>
+  <textarea
+    required
+    rows={4}
+    value={form.requirement}
+    onChange={(e) => setForm({ ...form, requirement: e.target.value })}
+    className="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white focus:border-gold/60 focus:outline-none transition-colors placeholder:text-white-muted/40 resize-none"
+    placeholder="I need 20 tons of premium red onions..."
+  />
+</div>
                 {error && <p className="text-red-400 text-sm">{error}</p>}
                 <button
                   type="submit"
