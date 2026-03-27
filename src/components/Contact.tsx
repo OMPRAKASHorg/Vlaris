@@ -113,7 +113,7 @@ export default function Contact() {
 value={form.requirement}
                     required
                     rows={4}
-                    value={form.requirement::}
+                    value={form.requirement}
                     onChange={(e) => setForm({ ...form, requirement: e.target.value })}
                     className="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white focus:border-gold/60 focus:outline-none transition-colors placeholder:text-white-muted/40 resize-none"
                     placeholder="I need 20 tons of premium red onions..."
