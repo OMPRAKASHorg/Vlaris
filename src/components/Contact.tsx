@@ -1,16 +1,17 @@
+import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Send, Phone, Mail, MapPin, MessageCircle, CheckCircle, Loader2 } from 'lucide-react';
 
 export default function Contact() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: true });
   const [form, setForm] = useState({ name: '', email: '', country: '', requirement: '' });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: any) => {
     e.preventDefault();
     setSubmitting(true);
     setError('');
