@@ -52,8 +52,9 @@ useEffect(() => {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-           Array.isArray(testimonials) && testimonials.map((item, i) => (
-              <motion.div
+          Array.isArray(testimonials) && testimonials.map((item, i) => (
+  <div>...</div>
+))
                 key={t.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
