@@ -22,7 +22,9 @@ export default async function handler(req, res) {
       }
       const { data, error } = await supabase
         .from('inquiries')
-        .insert({ name, email, country, requirement })
+       .insert([
+  { name, email, country, requirement }
+])
         .select()
         .single();
       if (error) throw error;
