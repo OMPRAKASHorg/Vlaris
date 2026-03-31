@@ -52,7 +52,8 @@ useEffect(() => {
           </div>
         ) : (
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-  {Array.isArray(testimonials) && testimonials.map((t, i) => (
+  {Array.isArray(testimonials) ? (
+  testimonials.map((t, i) => (
     <motion.div
       key={t.id}
       initial={{ opacity: 0, y: 30 }}
@@ -63,7 +64,7 @@ useEffect(() => {
       <p>{t.review}</p>
       <p>{t.name}</p>
     </motion.div>
-  ))}
+  )}
 </div>
         )}
       </div>
