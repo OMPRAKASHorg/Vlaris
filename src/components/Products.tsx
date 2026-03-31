@@ -1,7 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ShieldCheck, Truck, Award, Leaf } from 'lucide-react';
-
 interface Product {
   id: number;
   name: string;
