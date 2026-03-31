@@ -79,23 +79,21 @@ useEffect(() => {
         <img
           src={product.image_url}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          className="w-full h-full object-cover"
         />
       </div>
 
       <div className="p-6 sm:p-8">
-        <h3 className="text-2xl font-bold mb-3">
-          {product.name}
-        </h3>
-
-        <p className="text-white-muted mb-6">
-          {product.description}
-        </p>
+        <h3>{product.name}</h3>
+        <p>{product.description}</p>
       </div>
     </motion.div>
-  )}
-</div>
-        )}
+  ))
+) : (
+  <p className="text-white">No products found</p>
+)}
+        </div>
+      )}
       </div>
     </section>
   );
