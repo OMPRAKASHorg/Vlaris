@@ -1,7 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Star, Quote } from 'lucide-react';
-
 interface Testimonial {
   id: number;
   name: string;
