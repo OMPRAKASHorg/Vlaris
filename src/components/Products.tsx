@@ -95,6 +95,7 @@ useEffect(() => {
         </div>
       )}   {/* loading ternary close */}
       </div>  {/* container close */}
+   </div>
     </section>
   );
 }
