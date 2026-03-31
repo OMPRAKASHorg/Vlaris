@@ -93,8 +93,8 @@ useEffect(() => {
   <p className="text-white">No products found</p>
 )}
         </div>
-      )}
-      </div>
+      )}   {/* loading ternary close */}
+      </div>  {/* container close */}
     </section>
   );
 }
